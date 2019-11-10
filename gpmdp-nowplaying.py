@@ -17,6 +17,6 @@ if t == 'None':
 elif data['playing']:
     np = str('Now playing:   ' + t + ' - ' + a + '   (' + b + ')')
 else:
-    np = str('Paused:   ' + t + ' - ' + a + ' (' + b + ')')
+    np = str('Paused:   ' + t + ' - ' + a + '   (' + b + ')')
 
 print np
