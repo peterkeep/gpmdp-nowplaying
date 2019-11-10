@@ -1,5 +1,7 @@
 # Google Play Music Desktop Player: Now Playing
 
-This script reads the current song information from GPMDP's `playback.json` file, and stores the information to a file: `~/.nowplaying`.
+This script reads the current song information from GPMDP's `playback.json` file, and prints the information.
 
-This can then be accessed easily by terminal.
+When GPMDP is closed (or isn't playing/paused), it does not display anything.
+
+Mainly this is used with `genmon` to create an xfce panel to display the now playing information.
