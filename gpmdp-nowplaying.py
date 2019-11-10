@@ -18,7 +18,7 @@ b = str(album)
 if t == 'None':
     np = str(' ')
 elif data['playing']:
-    np = str('Now playing:   ' + t + ' - ' + a + ' (' + b + ')')
+    np = str('Now playing:   ' + t + ' - ' + a + '   (' + b + ')')
 else:
     np = str('Paused:   ' + t + ' - ' + a + ' (' + b + ')')
 
