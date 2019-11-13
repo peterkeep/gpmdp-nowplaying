@@ -1,18 +1,17 @@
 #!/usr/bin/env python
 
 import json
-import urllib.request
+import urllib
 from PIL import Image
 
 with open('/home/[USER]/.config/Google Play Music Desktop Player/json_store/playback.json') as json_file:
     data = json.load(json_file)
     album = data['song']['album']
-    art =  data['song']['albumArt']
+    art =  str(data['song']['albumArt'])
 
 b = str(album)
 
-
-f = open("/home/peter/.nowplaying/album.txt", "r")
+f = open("/home/[USER]/.nowplaying/album.txt", "r")
 contents = f.readline().rstrip('/n')
 f.close()
 
@@ -25,13 +24,14 @@ for i in range(0,min(len(b),len(contents))):
     else:
         testequality = True
 
-if not testequality:
-    urllib.request.'urlretrieve(art, "/home/peter/.nowplaying/album.jpg")
-    image = "/home/peter/.nowplaying/album.jpg"
-    im1 = Image.open(image)
-    im5 = im1.resize((70, 70), Image.ANTIALIAS)
-    im5.save("/home/peter/.nowplaying/album.jpg")
+if not testequality and art != None:
+    image = str(urllib.urlretrieve(art, r"/home/[USER]/.nowplaying/album-large.jpg"))
+    im1 = Image.open("/home/[USER]/.nowplaying/album-large.jpg")
+    size = (50,50)
+    im1 = im1.resize(size, Image.ANTIALIAS)
+    im1.save("/home/[USER]/.nowplaying/album.jpg")
 
-f = open("/home/peter/.nowplaying/album.txt", "w")
-f.write(b)
-f.close()
+if not testequality and art != None:
+    f = open("/home/[USER]/.nowplaying/album.txt", "w")
+    f.write(b)
+    f.close()
